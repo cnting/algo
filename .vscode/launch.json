@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JosephProblem",
+            "request": "launch",
+            "mainClass": "day6_linkedlist.JosephProblem"
+        }
+    ]
+}
