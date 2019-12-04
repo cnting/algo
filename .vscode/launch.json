@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DynamicCapacityArray",
+            "request": "launch",
+            "mainClass": "day5_array.DynamicCapacityArray",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PalindromeString",
             "request": "launch",
             "mainClass": "day6_linkedlist.PalindromeString",
