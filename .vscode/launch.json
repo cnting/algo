@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SortedArray",
+            "request": "launch",
+            "mainClass": "day5_array.SortedArray",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Array",
+            "request": "launch",
+            "mainClass": "day5_array.Array",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DynamicCapacityArray",
             "request": "launch",
             "mainClass": "day5_array.DynamicCapacityArray",
