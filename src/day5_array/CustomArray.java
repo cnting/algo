@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * 实现一个大小固定的数组，支持动态增删改操作
  */
-class SortedArray {
+class CustomArray {
 
     int[] data;
     int useCount = 0;
 
-    SortedArray(final int size) {
+    CustomArray(final int size) {
         data = new int[size];
     }
 
@@ -63,7 +63,7 @@ class SortedArray {
     }
 
     public static void main(final String[] args) {
-        final SortedArray array = new SortedArray(5);
+        final CustomArray array = new CustomArray(5);
         array.add(0);
         array.add(3);
         array.add(1);
