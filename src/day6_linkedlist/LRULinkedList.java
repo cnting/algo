@@ -80,13 +80,14 @@ class LRU<T> {
         }
         return sb.toString();
     }
-}
 
-class Node<T> {
-    T element;
-    Node<T> next;
-
-    Node(T element) {
-        this.element = element;
+    class Node<T> {
+        T element;
+        Node<T> next;
+    
+        Node(T element) {
+            this.element = element;
+        }
     }
 }
+
