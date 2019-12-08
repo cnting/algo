@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayStack",
+            "request": "launch",
+            "mainClass": "day8_stack.ArrayStack",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FindMiddleNode",
             "request": "launch",
             "mainClass": "day6_linkedlist.FindMiddleNode",
