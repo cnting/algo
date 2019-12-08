@@ -5,8 +5,8 @@ package day6_linkedlist;
  */
 class SortedLinkedList {
     public static void main(String[] args) {
-        Node headA = generateLinkedList(new int[] { 1, 5, 6, 7, 8, 9 });
-        Node headB = generateLinkedList(new int[] { 2, 3, 4, 5 });
+        Node headA = NodeUtil.generateNode(new int[] { 1, 5, 6, 7, 8, 9 });
+        Node headB = NodeUtil.generateNode(new int[] { 2, 3, 4, 5 });
 
         SortedLinkedList sortedLinkedList = new SortedLinkedList();
         Node resultHead = sortedLinkedList.sort(headA, headB);
@@ -54,29 +54,5 @@ class SortedLinkedList {
 
         }
         return resultHead;
-    }
-
-    private static Node generateLinkedList(int[] array) {
-        Node head = null;
-        Node curNode = null;
-        for (int i = 0; i < array.length; i++) {
-            if (head == null) {
-                curNode = head = new SortedLinkedList().new Node(array[i]);
-            } else {
-                Node next = new SortedLinkedList().new Node(array[i]);
-                curNode.next = next;
-                curNode = curNode.next;
-            }
-        }
-        return head;
-    }
-
-    public class Node {
-        int element;
-        Node next;
-
-        public Node(int element) {
-            this.element = element;
-        }
     }
 }

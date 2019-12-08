@@ -6,34 +6,12 @@ package day6_linkedlist;
 class ReverseLinkedList {
     public static void main(String[] args) {
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-        Node headNode = reverseLinkedList.generateNode(new int[] { 1, 2, 3, 4, 5 });
+        Node headNode = NodeUtil.generateNode(new int[] { 1, 2, 3, 4, 5 });
         System.out.println("-------反转前-------");
-        reverseLinkedList.print(headNode);
+        NodeUtil.printNode(headNode);
         headNode = reverseLinkedList.reverse(headNode);
         System.out.println("-------反转后-------");
-        reverseLinkedList.print(headNode);
-    }
-
-    Node generateNode(int[] array) {
-        Node headNode = null;
-        Node node = null;
-        for (int i : array) {
-            Node n = new Node(i);
-            if (headNode == null) {
-                node = headNode = n;
-            } else {
-                node.next = n;
-                node = n;
-            }
-        }
-        return headNode;
-    }
-
-    void print(Node n) {
-        while (n != null) {
-            System.out.println(n.element);
-            n = n.next;
-        }
+        NodeUtil.printNode(headNode);
     }
 
     Node reverse(Node headNode) {
@@ -47,12 +25,5 @@ class ReverseLinkedList {
         return pre;
     }
 
-    class Node {
-        int element;
-        Node next;
-
-        Node(int element) {
-            this.element = element;
-        }
-    }
+    
 }

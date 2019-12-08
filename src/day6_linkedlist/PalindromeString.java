@@ -2,6 +2,7 @@ package day6_linkedlist;
 
 /**
  * 回文字符串，正读和反读一样的字符串 问题：字符串使用单链表存储，如何判断一个字符串是否是回文字符串
+ * 
  */
 class PalindromeString {
     public static void main(String[] args) {
@@ -36,56 +37,37 @@ class PalindromeString {
         return firstNode;
     }
 
+    /**
+     * 先找到单链表的中间位置，然后将后半段链表反转。然后设置两个指针，从【开始位置】和【反转过的后半段的开始位置】开始遍历，看内容是否相同
+     * 
+     * @param firstLetter
+     * @return
+     */
     private static boolean isPalindrome(Letter firstLetter) {
-        // 举例：leaeeael
-        int sum = 0;
-        Letter letter = firstLetter;
-        while (letter != null) {
-            sum++;
-            letter = letter.nextNode;
-        }
-        // 取得中间位置
-        int middle = (sum / 2);
-        int count = 0;
-        letter = firstLetter;
-        // 找到中间node
-        while (count < middle) {
-            count++;
-            letter = letter.nextNode;
-        }
-        char[] array = new char[sum - middle];
-        count = 0;
-        // 存到数组中
-        while (letter != null) {
-            array[count++] = letter.letter;
-            letter = letter.nextNode;
-        }
-        // 倒置链表 
-        Letter reverseFirstLetter = null;
-        Letter reverseLetter = null;
-        count = array.length - 1;
-        while (count >= 0) {
-            if (reverseFirstLetter == null) {
-                reverseFirstLetter = new Letter(array[count]);
-                reverseLetter = reverseFirstLetter;
-            } else {
-                Letter nextNode = new Letter(array[count]);
-                reverseLetter.nextNode = nextNode;
-                reverseLetter = nextNode;
+        // 找到中间节点
+        Letter fastNode = firstLetter, slowNode = firstLetter;
+        while (fastNode != null) {
+            fastNode = fastNode.nextNode;
+            if (fastNode != null) {
+                fastNode = fastNode.nextNode;
+                slowNode = slowNode.nextNode;
             }
-            --count;
         }
-        letter = firstLetter;
-        reverseLetter = reverseFirstLetter;
-        count = 0;
-        while (count < middle) {
-            if (letter.letter != reverseLetter.letter) {
+        // 倒置链表
+        Letter pre = null, next;
+        while (slowNode != null) {
+            next = slowNode.nextNode;
+            slowNode.nextNode = pre;
+            pre = slowNode;
+            slowNode = next;
+        }
+        // 从【开始位置】和【反转过的后半段的开始位置】开始遍历，看内容是否相同
+        while (pre != null) {
+            if (firstLetter.letter != pre.letter) {
                 return false;
-            } else {
-                count++;
-                letter = letter.nextNode;
-                reverseLetter = reverseLetter.nextNode;
             }
+            firstLetter = firstLetter.nextNode;
+            pre = pre.nextNode;
         }
         return true;
     }
