@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReverseLinkedList",
+            "request": "launch",
+            "mainClass": "day6_linkedlist.ReverseLinkedList",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SortedLinkedList",
             "request": "launch",
             "mainClass": "day6_linkedlist.SortedLinkedList",
