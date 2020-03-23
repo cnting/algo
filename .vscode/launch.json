@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LinkedListQueue",
+            "request": "launch",
+            "mainClass": "day9_queue.LinkedListQueue",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayQueue",
+            "request": "launch",
+            "mainClass": "day9_queue.ArrayQueue",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Browser",
+            "request": "launch",
+            "mainClass": "day8_stack.Browser",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedlistStack",
+            "request": "launch",
+            "mainClass": "day8_stack.LinkedlistStack",
+            "projectName": "algo_52e3387f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayStack",
             "request": "launch",
             "mainClass": "day8_stack.ArrayStack",
