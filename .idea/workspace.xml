@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61113298-06f5-4490-aaa9-338c126cfee9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day10_dynamic/Change.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day10_dynamic/Robot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day11_sort/BubbleSort.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day11_sort/InsertSort.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day11_sort/SelectionSort.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day5_array/ArrayQuestion1.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day5_array/ArrayQuestion2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/algo/META-INF/algo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/algo/META-INF/algo.kotlin_module" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,37 +45,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.day11_sort.BubbleSortKt">
+  <component name="RunManager" selected="Kotlin.day5_array.ArrayQuestion2Kt">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Change" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day10_dynamic.Change" />
-      <module name="algo" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="day10_dynamic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day10_dynamic.Solution" />
-      <module name="algo" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="day10_dynamic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,6 +104,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="day5_array.ArrayQuestion1Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="algo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="day5_array.ArrayQuestion1Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="day5_array.ArrayQuestion2Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="algo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="day5_array.ArrayQuestion2Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -160,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.day5_array.ArrayQuestion2Kt" />
+        <item itemvalue="Kotlin.day5_array.ArrayQuestion1Kt" />
         <item itemvalue="Kotlin.day11_sort.BubbleSortKt" />
         <item itemvalue="Kotlin.day11_sort.SelectionSortKt" />
         <item itemvalue="Kotlin.day11_sort.InsertSortKt" />
-        <item itemvalue="Application.Change" />
-        <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
   </component>
