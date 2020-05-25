@@ -47,7 +47,7 @@ fun reversePrint(head: ListNode?): IntArray {
     }
 ```
 结果
-```
+```kotlin
 执行用时 :228 ms, 在所有 Kotlin 提交中击败了94.44%的用户
 内存消耗 :35.3 MB, 在所有 Kotlin 提交中击败了100.00%的用户
 ```
