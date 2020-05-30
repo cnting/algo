@@ -10,3 +10,4 @@
 - [x] [7.重建二叉树](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer7.md)
 - [x] [10_1. 斐波那契数列](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer10_1.md)
 - [x] [10_2. 青蛙跳格子](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer10_2.md)
+- [x] [11. 旋转数组的最小数字](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer11.md)
