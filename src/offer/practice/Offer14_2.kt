@@ -10,6 +10,9 @@ import kotlin.math.pow
  */
 class Offer14_2 {
     fun cuttingRope(n: Int): Int {
+
+
+        
         if (n <= 3) {
             return n - 1
         }
