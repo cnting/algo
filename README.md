@@ -13,3 +13,4 @@
 - [x] [11. 旋转数组的最小数字](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer11.md)
 - [x] [12. 矩阵中的路径](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer12.md)
 - [x] [13. 机器人的运动范围](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer13.md)
+- [x] [14_1. 剪绳子](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer14_1.md)
