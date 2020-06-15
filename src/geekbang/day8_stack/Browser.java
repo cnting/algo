@@ -1,4 +1,4 @@
-package day8_stack;
+package geekbang.day8_stack;
 
 /**
  * 编程模拟实现一个浏览器的前进、后退功能 当你依次访问完一串页面 a-b-c 之后，点击浏览器的后退按钮，就可以查看之前浏览过的页面 b 和 a。

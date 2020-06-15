@@ -1,4 +1,4 @@
-package day6_linkedlist;
+package geekbang.day6_linkedlist;
 
 /**
  * 实现单链表反转

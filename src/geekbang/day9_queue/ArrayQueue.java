@@ -1,6 +1,4 @@
-package day9_queue;
-
-import java.util.Queue;
+package geekbang.day9_queue;
 
 /**
  * 用数组实现队列，先进先出，需要在两头进行操作，记录当前的头部和尾部

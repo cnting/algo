@@ -1,4 +1,4 @@
-package day6_linkedlist;
+package geekbang.day6_linkedlist;
 
 /**
  * 实现两个有序的链表合并为一个有序链表

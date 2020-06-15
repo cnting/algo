@@ -14,3 +14,7 @@
 - [x] [12. 矩阵中的路径](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer12.md)
 - [x] [13. 机器人的运动范围](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer13.md)
 - [x] [14_1. 剪绳子](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer14_1.md)
+
+
+### 《极客时间》
+- [x] [15.二分查找求平方根](https://github.com/cnting/algo/blob/master/src/geekbang/day15_binary/BinarySqrt.kt)

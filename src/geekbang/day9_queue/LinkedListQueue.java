@@ -1,4 +1,4 @@
-package day9_queue;
+package geekbang.day9_queue;
 
 /**
  * 用链表实现队列，先进先出，需要在两头进行操作，记录当前的头部和尾部

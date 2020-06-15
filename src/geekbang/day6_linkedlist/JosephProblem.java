@@ -1,4 +1,4 @@
-package day6_linkedlist;
+package geekbang.day6_linkedlist;
 
 /**
  * 约瑟夫环：人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，执行下一个人。

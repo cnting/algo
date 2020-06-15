@@ -1,4 +1,4 @@
-package day6_linkedlist;
+package geekbang.day6_linkedlist;
 
 /**
  * 回文字符串，正读和反读一样的字符串 问题：字符串使用单链表存储，如何判断一个字符串是否是回文字符串

@@ -1,4 +1,4 @@
-package day6_linkedlist;
+package geekbang.day6_linkedlist;
 
 /**
  * 实现求链表的中间结点:如果链表中节点总数为奇数，返回中间结点，如果结点总数是偶数，返回中间两个结点的任意一个。 结题思路:

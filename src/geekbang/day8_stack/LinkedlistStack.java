@@ -1,4 +1,4 @@
-package day8_stack;
+package geekbang.day8_stack;
 
 /**
  * 用链表实现一个链式栈，后进先出，所以只需要在一头进行操作

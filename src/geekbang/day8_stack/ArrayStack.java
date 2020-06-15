@@ -1,4 +1,4 @@
-package day8_stack;
+package geekbang.day8_stack;
 
 import java.util.Arrays;
 

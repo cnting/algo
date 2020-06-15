@@ -1,4 +1,4 @@
-package day5_array;
+package geekbang.day5_array;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package day10_dynamic;
+package geekbang.day10_dynamic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
