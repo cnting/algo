@@ -14,6 +14,8 @@
 - [x] [12. 矩阵中的路径](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer12.md)
 - [x] [13. 机器人的运动范围](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer13.md)
 - [x] [14_1. 剪绳子](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer14_1.md)
+- [x] [15.二进制中1的个数](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer15.md)
+- [x] [16.数值的整数次方](https://github.com/cnting/algo/blob/master/src/offer/explain/Offer16.md)
 
 
 ### 《极客时间》
