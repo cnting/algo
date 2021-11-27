@@ -7,9 +7,9 @@ import java.util.Arrays;
  */
 class Sort {
     public static void main(String[] args) {
-//        int[] arr = new int[]{2, 7, 8, 4, 3, 9, 1, 5, 4, 5, 2, 5};
-//        quickSort(arr, 0, arr.length - 1);
-//        System.out.println(Arrays.toString(arr));
+        int[] arr = new int[]{2, 7, 8, 4, 3, 9, 1, 5, 4, 5, 2, 5};
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
 
 //        for (int k = 0; k < 20; k++) {
 //            int[] arr = new int[10000000];
@@ -22,8 +22,8 @@ class Sort {
 //            System.out.println("耗时:" + (System.currentTimeMillis() - start));
 //        }
 
-        int[] arr = new int[]{3, 2, 4, 1, 4, 2};
-        System.out.println(Arrays.toString(partition(arr, 0, arr.length - 1)));
+//        int[] arr = new int[]{3, 2, 4, 1, 4, 2};
+//        System.out.println(Arrays.toString(partition(arr, 0, arr.length - 1)));
     }
 
     private static void swap(int[] arr, int i, int j) {
@@ -36,7 +36,7 @@ class Sort {
      * 冒泡排序
      */
     private static void bubbleSort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length; i++) {
             boolean flag = false;
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -44,9 +44,7 @@ class Sort {
                     flag = true;
                 }
             }
-            if (!flag) {
-                break;
-            }
+            if (!flag) break;
         }
     }
 
@@ -55,15 +53,14 @@ class Sort {
      */
     private static void selectSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            int min = i;
+            int minIndex = i;
             for (int j = i; j < arr.length; j++) {
-                if (arr[j] < arr[min]) {
-                    min = j;
-                }
-                if (min != i) {
-                    swap(arr, min, i);
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
                 }
             }
+            if (i != minIndex)
+                swap(arr, i, minIndex);
         }
     }
 
@@ -72,9 +69,11 @@ class Sort {
      */
     private static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
-            for (int j = i - 1; j >= 0; j--) {
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
+            for (int j = i; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                } else {
+                    break;
                 }
             }
         }
@@ -128,26 +127,28 @@ class Sort {
     }
 
     /**
-     * 将start..end区域划分成三部分:
-     * 1、小于arr[end]
-     * 2、等于arr[end]
-     * 3、大于arr[end]
-     * 返回等于arr[end]的左右边界，这部分区域之后不用再排序了
+     * 这个一个处理arr[start..end]的函数
+     * 默认以arr[end]作为划分值，arr[end] = p，要划分出：小于p、等于p、大于p三个区域
+     * 返回 等于区域 的左右边界
      */
     private static int[] partition(int[] arr, int start, int end) {
-        int left = start - 1;
-        int right = end + 1;
-        int i = start;
-        int value = arr[end];
-        while (i < right) {
-            if (arr[i] < value) {
-                swap(arr, ++left, i++);
-            } else if (arr[i] == value) {
-                i++;
+        int less = start - 1;  //小于区域的右边界
+        int more = end; //大于区域的左边界，注意此时只有[start..end-1]位置进行划分,end位置没有参与
+
+        //start位置表示当前值
+        while (start < more) {
+            if (arr[start] < arr[end]) {
+                //当前数和 小于区的下一个交换，小于区右扩，当前位置++
+                swap(arr, ++less, start++);
+            } else if (arr[start] > arr[end]) {
+                //当前数和 大于区的前一个交换，大于区左扩，当前位置因为是没比较的值，所以不动
+                swap(arr, --more, start);
             } else {
-                swap(arr, --right, i);
+                start++;
             }
         }
-        return new int[]{left + 1, right - 1};
+        //此时more指向的是大于区域的左边界，跟end交换，就变成了等于区域的最后一个值
+        swap(arr, more, end);
+        return new int[]{less + 1, more};
     }
 }
