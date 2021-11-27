@@ -124,10 +124,4 @@ class Sort {
         swap(arr, i, end);
         return i;
     }
-
-    private static int partition2(int[] arr, int start, int end) {
-        
-    }
-
-
 }
