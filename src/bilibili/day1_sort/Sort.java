@@ -7,11 +7,23 @@ import java.util.Arrays;
  */
 class Sort {
     public static void main(String[] args) {
-        int[] arr = new int[]{2, 7, 8, 4, 3, 9, 1, 5, 4, 5, 2, 5};
+//        int[] arr = new int[]{2, 7, 8, 4, 3, 9, 1, 5, 4, 5, 2, 5};
+//        quickSort(arr, 0, arr.length - 1);
+//        System.out.println(Arrays.toString(arr));
 
-        quickSort(arr, 0, arr.length - 1);
+//        for (int k = 0; k < 20; k++) {
+//            int[] arr = new int[10000000];
+//            for (int i = 0; i < arr.length; i++) {
+//                arr[i] = (int) (Math.random() * 10000000);
+//            }
+//
+//            long start = System.currentTimeMillis();
+//            quickSort(arr, 0, arr.length - 1);
+//            System.out.println("耗时:" + (System.currentTimeMillis() - start));
+//        }
 
-        System.out.println(Arrays.toString(arr));
+        int[] arr = new int[]{3, 2, 4, 1, 4, 2};
+        System.out.println(Arrays.toString(partition(arr, 0, arr.length - 1)));
     }
 
     private static void swap(int[] arr, int i, int j) {
@@ -107,21 +119,35 @@ class Sort {
      */
     private static void quickSort(int[] arr, int start, int end) {
         if (start >= end) return;
-        int partition = partition(arr, start, end);
-        quickSort(arr, start, partition - 1);
-        quickSort(arr, partition + 1, end);
+        //快排3.0，随机选一个位置和最后一个位置的值交换
+        int random = start + (int) (Math.random() * (end - start + 1));
+        swap(arr, random, end);
+        int[] partition = partition(arr, start, end);
+        quickSort(arr, start, partition[0] - 1);
+        quickSort(arr, partition[1] + 1, end);
     }
 
-    private static int partition(int[] arr, int start, int end) {
-        int value = arr[end];
+    /**
+     * 将start..end区域划分成三部分:
+     * 1、小于arr[end]
+     * 2、等于arr[end]
+     * 3、大于arr[end]
+     * 返回等于arr[end]的左右边界，这部分区域之后不用再排序了
+     */
+    private static int[] partition(int[] arr, int start, int end) {
+        int left = start - 1;
+        int right = end + 1;
         int i = start;
-        for (int j = start; j < end; j++) {
-            if (arr[j] <= value) {
-                swap(arr, i, j);
+        int value = arr[end];
+        while (i < right) {
+            if (arr[i] < value) {
+                swap(arr, ++left, i++);
+            } else if (arr[i] == value) {
                 i++;
+            } else {
+                swap(arr, --right, i);
             }
         }
-        swap(arr, i, end);
-        return i;
+        return new int[]{left + 1, right - 1};
     }
 }
