@@ -6,6 +6,7 @@ import bilibili.day5_graph.model.Node;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.function.Consumer;
 
 /**
  * ~~~~~ 1
@@ -36,16 +37,16 @@ public class GraphTraverse {
     public static void bfs(Node node) {
         if (node == null) return;
         LinkedList<Node> queue = new LinkedList<>();
-        HashSet<Node> set = new HashSet<>();
+        HashSet<Node> nodes = new HashSet<>();
         queue.add(node);
-        set.add(node);
-        while (!queue.isEmpty()) {
-            Node n = queue.poll();
-            System.out.println(n.value);
-            for (Node next : n.nexts) {
-                if (!set.contains(next)) {
+        nodes.add(node);
+        while (!queue.isEmpty()){
+            Node cur = queue.poll();
+            System.out.println(cur.value);
+            for(Node next:cur.nexts){
+                if(!nodes.contains(next)){
                     queue.add(next);
-                    set.add(next);
+                    nodes.add(next);
                 }
             }
         }
@@ -57,18 +58,18 @@ public class GraphTraverse {
     public static void dfs(Node node) {
         if (node == null) return;
         Stack<Node> stack = new Stack<>();
-        HashSet<Node> set = new HashSet<>();
+        HashSet<Node> nodes = new HashSet<>();
         stack.push(node);
-        set.add(node);
+        nodes.add(node);
         System.out.println(node.value);
         while (!stack.isEmpty()){
             Node cur = stack.pop();
-            for(Node next : cur.nexts){
-                if(!set.contains(next)){
-                    System.out.println(next.value);
+            for(Node next:cur.nexts){
+                if(!nodes.contains(next)){
                     stack.push(cur);
                     stack.push(next);
-                    set.add(next);
+                    nodes.add(next);
+                    System.out.println(next.value);
                     break;
                 }
             }

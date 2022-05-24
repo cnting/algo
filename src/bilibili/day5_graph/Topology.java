@@ -20,31 +20,29 @@ public class Topology {
         };
         Graph graph = CreateGraph.createGraph(arr);
         List<Node> result = topology(graph);
-        for(Node node : result){
+        for (Node node : result) {
             System.out.println(node.value);
         }
     }
 
     public static List<Node> topology(Graph graph) {
-        List<Node> result = new ArrayList<>();
-        //记录每个节点的入度
         HashMap<Node, Integer> inMap = new HashMap<>();
-        LinkedList<Node> zeroInQueue = new LinkedList<>();
+        LinkedList<Node> zeroInMap = new LinkedList<>();
+        List<Node> result = new ArrayList<>();
+
         for (Node node : graph.nodes.values()) {
             inMap.put(node, node.in);
             if (node.in == 0) {
-                zeroInQueue.add(node);
+                zeroInMap.add(node);
             }
         }
-        while (!zeroInQueue.isEmpty()) {
-            Node cur = zeroInQueue.poll();
+        while (!zeroInMap.isEmpty()) {
+            Node cur = zeroInMap.poll();
             result.add(cur);
-            //入度都减一
             for (Node next : cur.nexts) {
-                int newIn = inMap.get(next) - 1;
-                inMap.put(next, newIn);
-                if (newIn == 0) {
-                    zeroInQueue.add(next);
+                inMap.put(next, inMap.get(next) - 1);
+                if (inMap.get(next) == 0) {
+                    zeroInMap.add(next);
                 }
             }
         }
