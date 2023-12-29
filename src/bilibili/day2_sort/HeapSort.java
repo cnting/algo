@@ -14,20 +14,20 @@ public class HeapSort {
         arr[count++] = 3;
         arr[count++] = 7;
 
-        buildHeap(arr, count);
+        buildHeap1(arr, count);
         System.out.println("堆化:" + Arrays.toString(arr));
 
-//        sort(arr, count - 1);
+//        sort1(arr, count - 1);
 //        System.out.println("对堆进行排序:" + Arrays.toString(arr));
 
-        insertHeapify(arr, 8);
+        insertHeapify1(arr, 8);
         System.out.println("插入数据8:" + Arrays.toString(arr));
-        insertHeapify(arr, 5);
+        insertHeapify1(arr, 5);
         System.out.println("插入数据5:" + Arrays.toString(arr));
-
-        removeHeapify(arr);
+//
+        removeHeapify1(arr);
         System.out.println("移除堆顶元素:" + Arrays.toString(arr));
-        removeHeapify(arr);
+        removeHeapify1(arr);
         System.out.println("移除堆顶元素:" + Arrays.toString(arr));
     }
 
@@ -99,5 +99,57 @@ public class HeapSort {
             //将剩下区域继续堆化
             heapify(arr, k, 0);
         }
+    }
+
+    /**
+     * 从最后一个非叶子节点开始，从上往下堆化
+     *
+     * @param arr
+     * @param n
+     */
+    private static void buildHeap1(int[] arr, int n) {
+        for (int i = (n - 1) / 2; i >= 0; i--) {
+            heapify1(arr, n, i);
+        }
+    }
+
+    private static void heapify1(int[] arr, int n, int i) {
+        while (true){
+            int maxPosition = i;
+            if (i * 2 + 1 < n && arr[i * 2 + 1] > arr[maxPosition]) maxPosition = i * 2 + 1;
+            if (i * 2 + 2 < n && arr[i * 2 + 2] > arr[maxPosition]) maxPosition = i * 2 + 2;
+            if (maxPosition == i) break;
+            swap(arr, i, maxPosition);
+            i = maxPosition;
+        }
+
+    }
+
+    private static void sort1(int[] arr, int n) {
+        int k = n;
+        while (k > 0) {
+            swap(arr, k, 0);
+            k--;
+            heapify1(arr, k, 0);
+        }
+    }
+
+    private static void insertHeapify1(int[] arr, int n) {
+        if (count >= arrLength) return;
+        arr[count] = n;
+        int k = count;
+        count++;
+        while ((k - 1) / 2 >= 0 && arr[(k - 1) / 2] < arr[k]) {
+            swap(arr, k, (k - 1) / 2);
+            k = (k - 1) / 2;
+        }
+    }
+
+    private static void removeHeapify1(int[] arr){
+        if(count==0) return;
+        arr[0] = arr[count-1];
+        arr[count-1] = 0;
+        count--;
+        heapify1(arr,count,0);
     }
 }

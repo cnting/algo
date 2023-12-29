@@ -1,6 +1,10 @@
 package bilibili.day1_sort;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.function.ToIntFunction;
 
 /**
  * Created by cnting on 2021/11/20
@@ -69,13 +73,16 @@ class Sort {
      */
     private static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (arr[j] < arr[j - 1]) {
-                    swap(arr, j, j - 1);
+            int value = arr[i];
+            int j = i - 1;
+            for (; j >= 0; j--) {
+                if (arr[j] > value) {
+                    arr[j + 1] = arr[j];
                 } else {
                     break;
                 }
             }
+            arr[j + 1] = value;
         }
     }
 
@@ -113,42 +120,73 @@ class Sort {
         }
     }
 
-    /**
-     * 快排
-     */
+
     private static void quickSort(int[] arr, int start, int end) {
         if (start >= end) return;
-        //快排3.0，随机选一个位置和最后一个位置的值交换
         int random = start + (int) (Math.random() * (end - start + 1));
         swap(arr, random, end);
-        int[] partition = partition(arr, start, end);
-        quickSort(arr, start, partition[0] - 1);
-        quickSort(arr, partition[1] + 1, end);
+        int[] p = partition(arr, start, end);
+        quickSort(arr, start, p[0] - 1);
+        quickSort(arr, p[1] + 1, end);
     }
 
-    /**
-     * 这个一个处理arr[start..end]的函数
-     * 默认以arr[end]作为划分值，arr[end] = p，要划分出：小于p、等于p、大于p三个区域
-     * 返回 等于区域 的左右边界
-     */
     private static int[] partition(int[] arr, int start, int end) {
-        int less = start - 1;  //小于区域的右边界
-        int more = end; //大于区域的左边界，注意此时只有[start..end-1]位置进行划分,end位置没有参与
-
-        //start位置表示当前值
-        while (start < more) {
-            if (arr[start] < arr[end]) {
-                //当前数和 小于区的下一个交换，小于区右扩，当前位置++
-                swap(arr, ++less, start++);
-            } else if (arr[start] > arr[end]) {
-                //当前数和 大于区的前一个交换，大于区左扩，当前位置因为是没比较的值，所以不动
-                swap(arr, --more, start);
+        int less = start - 1;//小于区域的右边界
+        int more = end;  //大于区域的左边界
+        int i = start;
+        while (i < more) {
+            if (arr[i] < arr[end]) {
+                less++;
+                swap(arr, less, i);
+                i++;
+            } else if (arr[i] > arr[end]) {
+                more--;
+                swap(arr, i, more);
             } else {
-                start++;
+                i++;
             }
         }
-        //此时more指向的是大于区域的左边界，跟end交换，就变成了等于区域的最后一个值
         swap(arr, more, end);
         return new int[]{less + 1, more};
     }
+
+
+    /**
+     * 快排
+     */
+//    private static void quickSort(int[] arr, int start, int end) {
+//        if (start >= end) return;
+//        //快排3.0，随机选一个位置和最后一个位置的值交换
+//        int random = start + (int) (Math.random() * (end - start + 1));
+//        swap(arr, random, end);
+//        int[] partition = partition(arr, start, end);
+//        quickSort(arr, start, partition[0] - 1);
+//        quickSort(arr, partition[1] + 1, end);
+//    }
+//
+//    /**
+//     * 这个一个处理arr[start..end]的函数
+//     * 默认以arr[end]作为划分值，arr[end] = p，要划分出：小于p、等于p、大于p三个区域
+//     * 返回 等于区域 的左右边界
+//     */
+//    private static int[] partition(int[] arr, int start, int end) {
+//        int less = start - 1;  //小于区域的右边界
+//        int more = end; //大于区域的左边界，注意此时只有[start..end-1]位置进行划分,end位置没有参与
+//
+//        //start位置表示当前值
+//        while (start < more) {
+//            if (arr[start] < arr[end]) {
+//                //当前数和 小于区的下一个交换，小于区右扩，当前位置++
+//                swap(arr, ++less, start++);
+//            } else if (arr[start] > arr[end]) {
+//                //当前数和 大于区的前一个交换，大于区左扩，当前位置因为是没比较的值，所以不动
+//                swap(arr, --more, start);
+//            } else {
+//                start++;
+//            }
+//        }
+//        //此时more指向的是大于区域的左边界，跟end交换，就变成了等于区域的最后一个值
+//        swap(arr, more, end);
+//        return new int[]{less + 1, more};
+//    }
 }
